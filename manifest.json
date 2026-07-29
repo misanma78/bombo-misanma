@@ -3,12 +3,12 @@
   "name": "Bombo de Loterías Misanma",
   "icons": [
     {
-      "src": "https://github.io",
+      "src": "icono.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://github.io",
+      "src": "icono.png",
       "sizes": "512x512",
       "type": "image/png"
     }

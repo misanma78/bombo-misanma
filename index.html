@@ -2,14 +2,22 @@
 <html lang="es">
 
 <head>
-    
-<link rel="icon" type="image/png" href="icono.png">
-    <link rel="apple-touch-icon" href="https://github.io">
-   <link rel="manifest" href="manifest.json"> 
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bombo misanma</title>
+
+    <!-- CONFIGURACIÓN DE ICONOS PARA MÓVILES Y PC -->
+    <link rel="icon" type="image/png" href="icono.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="icono.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="icono.png">
+        <!-- Enlace obligatorio para activar el manifest en Android y Windows -->
+    <link rel="manifest" href="manifest.json">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bombo Misanma">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,7 +58,7 @@
             letter-spacing: 4px;
             color: #5d6d7e;
             font-weight: 800;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
         }
 
         .frase-cabecera .marca {
@@ -87,6 +95,7 @@
             background-color: #d9b310;
             box-shadow: 0 1px 3px rgba(217, 179, 16, 0.4);
         }
+
         .frase-cabecera .eslogan::before { left: -25px; }
         .frase-cabecera .eslogan::after { right: -25px; }
 
@@ -110,7 +119,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, rgba(212,175,55,0.05), transparent);
+            background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent);
         }
 
         .soporte-bombo::before {
@@ -121,7 +130,7 @@
             height: 12px;
             background: linear-gradient(to bottom, #d4af37, #aa841c);
             border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         .soporte-bombo::after {
@@ -144,6 +153,7 @@
             border-radius: 4px;
             z-index: 2;
         }
+
         .manivela::after {
             content: '';
             position: absolute;
@@ -163,7 +173,7 @@
             border-radius: 50%;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 0 20px rgba(212,175,55,0.3), 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.3), 0 10px 20px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-wrap: wrap;
             padding: 10px;
@@ -188,8 +198,9 @@
             height: 11px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, #fff, #328cc1);
-            box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
+
         .bola-bombo:nth-child(3n) { background: radial-gradient(circle at 30% 30%, #fff, #d9b310); }
         .bola-bombo:nth-child(7n) { background: radial-gradient(circle at 30% 30%, #fff, #ba9428); }
 
@@ -222,7 +233,7 @@
         button:hover {
             background-color: #0b3c5d;
         }
-        
+
         button:disabled {
             background-color: #bdc3c7;
             color: #7f8c8d;
@@ -275,6 +286,7 @@
             height: 46px;
             background-color: #d9b310;
             color: #0b3c5d;
+            -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             padding-top: 4px;
             box-sizing: border-box;
@@ -301,9 +313,9 @@
     <div class="container">
         <!-- Cabecera -->
         <div class="frase-cabecera">
-            <span class="subtitulo">Bombo de lotería</span>
+            <span class="subtitulo">¡Bombo de lotería</span>
             <h1 class="marca">misanma</h1>
-            <span class="eslogan">¡¡sempre toca!!</span>
+            <span class="eslogan">sempre toca!</span>
         </div>
 
         <!-- Bombo de Oro Español -->
@@ -319,23 +331,21 @@
                 <div class="manivela"></div>
             </div>
         </div>
-        
         <!-- Panel de Botones Interactivos -->
         <div class="grid-botones">
             <button id="btn-primitiva" onclick="generarPrimitiva()">La Primitiva</button>
             <button id="btn-bonoloto" onclick="generarBonoloto()">Bonoloto</button>
             <button id="btn-gordo" onclick="generarElGordo()">El Gordo</button>
             <button id="btn-euromillones" onclick="generarEuromillones()">Euromillones</button>
-                        <button id="btn-eurodreams" onclick="generarEuroDreams()">EuroDreams</button>
+            <button id="btn-eurodreams" onclick="generarEuroDreams()">EuroDreams</button>
         </div>
 
-        <!-- Contenedor donde se dibujan las bolas y estrellas -->
+        <!-- Contenedor donde se dibuja el boleto -->
         <div id="resultado"></div>
     </div>
 
-    <!-- Conexión con el archivo de JavaScript -->
+    <!-- Vinculación con la lógica de los sorteos -->
     <script src="app.js"></script>
 </body>
 
 </html>
-
