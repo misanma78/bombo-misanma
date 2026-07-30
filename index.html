@@ -7,9 +7,18 @@
     <title>Bombo misanma</title>
 
     <!-- CONFIGURACIÓN DE ICONOS PARA MÓVILES Y PC -->
-    <link rel="icon" type="image/png" href="icono.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="icono.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="icono.png">
+    <!-- Para Windows, Android y PC (Sigue usando tu webp) -->
+ <link rel="icon" type="image/png" href="./logobombo.png?v=1" sizes="32x32">
+    <link rel="icon" type="image/png" href="./logobombo.png?v=1" sizes="192x192">
+    <link rel="icon" type="image/png" href="./logobombo.png?v=1" sizes="512x512">
+
+<!-- Para iPhone (Cámbialo obligatoriamente a tu nuevo PNG) -->
+ 
+ <link rel="apple-touch-icon" href="./logobombo.png?v=1">
+    <link rel="apple-touch-icon" sizes="152x152" href="./logobombo.png?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="./logobombo.png?v=1">
+    <link rel="apple-touch-icon" sizes="167x167" href="./logobombo.png?v=1">
+
         <!-- Enlace obligatorio para activar el manifest en Android y Windows -->
     <link rel="manifest" href="manifest.json">
 
@@ -305,6 +314,18 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Cuando el bombo tenga la clase .girando, aplicamos la animación también a la manivela */
+.girando ~ .manivela::after {
+    animation: rotarManivela 0.6s infinite linear;
+    transform-origin: top center; /* Hace que gire desde su punto de unión */
+}
+
+@keyframes rotarManivela {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
     </style>
 </head>
 
@@ -313,9 +334,9 @@
     <div class="container">
         <!-- Cabecera -->
         <div class="frase-cabecera">
-            <span class="subtitulo">¡Bombo de lotería</span>
+            <span class="subtitulo">Bombo de lotería</span>
             <h1 class="marca">misanma</h1>
-            <span class="eslogan">sempre toca!</span>
+            <span class="eslogan">¡sempre toca!</span>
         </div>
 
         <!-- Bombo de Oro Español -->
